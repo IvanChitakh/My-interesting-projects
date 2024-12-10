@@ -28,16 +28,8 @@ class FindTheNaturalNumber:
             totalSumNumber = startNumber
             print('Подсчитал для тебя числа, вот, смотри:')
             while counter != theNumberOfReps:
-                stopTrigger = True # Задаём условие выхода из цикла
                 theSum += totalSumNumber # Высчитываем сумму элементов
-                firstElem = str(theSum)[0] # Берём первый элемен суммы
-                for i in str(theSum): # Запускаю проверку на одинаковые цифры в сумме
-                    if i == firstElem:
-                        continue
-                    else:
-                        stopTrigger = False # Если не проходит по условию, сразу выходим из цикла
-                        break
-                if stopTrigger: # Если проверку прошло, то выводим готовый результат
+                if len(set(str(theSum))) == 1: # Если проверку прошло, то выводим готовый результат
                     print('_____________')
                     print(f'Число {counter + 1} = {totalSumNumber}')
                     print(f'Сумма чисел от {startNumber} до {totalSumNumber} с шагом {theStep} = {theSum}', end='\n_____________\n')
